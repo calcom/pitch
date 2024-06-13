@@ -71,7 +71,7 @@ export function CarouselToolbar({ views }: Props) {
 
   const handleOnShare = () => {
     const popup = popupCenter({
-      url: "https://twitter.com/intent/tweet?text=Check this pitch deck https://midday.ai/pitch @middayai",
+      url: "https://twitter.com/intent/tweet?text=Check this sales deck https://deck.cal.dev @calcom",
       title: "Share",
       w: 800,
       h: 400,
@@ -195,11 +195,11 @@ export function CarouselToolbar({ views }: Props) {
             <DialogTitle>Share</DialogTitle>
           </DialogHeader>
           <DialogDescription>
-            Thanks for sharing our pitch deck.
+            Thanks for sharing our sales deck.
           </DialogDescription>
 
           <div className="grid gap-6 py-4">
-            <CopyInput value="https://midday.ai/pitch" />
+            <CopyInput value="https://deck.cal.dev" />
             <Button
               className="w-full flex items-center space-x-2 h-10"
               onClick={handleOnShare}

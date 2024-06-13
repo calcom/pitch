@@ -39,8 +39,10 @@ export function SectionTraction() {
     <div className="min-h-screen relative w-screen">
       <div className="absolute left-4 right-4 md:left-8 md:right-8 top-4 flex justify-between text-lg">
         <span>Where we are</span>
-        <span className="text-[#878787]">
-          <Link href="/">midday.ai</Link>
+        <span className="text-[#878787] hover:text-white">
+          <Link target="_blank" className="font-display" href="https://cal.com">
+            Cal.com
+          </Link>
         </span>
       </div>
       <div className="flex flex-col min-h-screen justify-center container">
@@ -135,7 +137,7 @@ export function SectionTraction() {
 
             <div className="absolute w-[220px] bottom-6 left-[50%] -mt-5 -ml-[110px] flex justify-center">
               <a
-                href="https://twitter.com/search?q=midday.ai&src=typed_query&f=top"
+                href="https://twitter.com/search?q=cal.com&src=typed_query&f=top"
                 target="_blank"
                 rel="noreferrer"
               >

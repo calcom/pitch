@@ -18,6 +18,9 @@ const config = {
       },
     },
     extend: {
+      fontFamily: {
+        display: [["Cal Sans"], { fontVariationSettings: '"wdth" 125' }],
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
