@@ -22,6 +22,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { useHotkeys } from "react-hotkeys-hook";
 import { FaXTwitter } from "react-icons/fa6";
 import { CopyInput } from "@/components/copy-input";
+import Link from "next/link";
 
 type Props = {
   views: number;
@@ -111,9 +112,9 @@ export function CarouselToolbar({ views }: Props) {
 
                 <Tooltip>
                   <TooltipTrigger asChild>
-                    <button type="button" onClick={() => api.scrollTo(100)}>
+                    <Link href="https://cal.com/sales">
                       <Icons.Calendar size={18} className="text-[#878787]" />
-                    </button>
+                    </Link>
                   </TooltipTrigger>
                   <TooltipContent
                     className="py-1 px-3 rounded-sm"

@@ -11,7 +11,7 @@ import customers from "./customers.png";
 import { Card } from "./ui";
 
 export function SectionTraction() {
-  const [stars, setStars] = useState(0);
+  const [stars, setStars] = useState(null);
   const [users, setUsers] = useState(0);
   const [transactions, setTransactions] = useState(0);
 

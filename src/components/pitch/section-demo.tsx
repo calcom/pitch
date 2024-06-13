@@ -22,45 +22,9 @@ export function SectionDemo({ playVideo }: Props) {
   const [isPlaying, setPlaying] = useState(true);
   const isDesktop = useMediaQuery("(min-width: 768px)");
 
-  useHotkeys(
-    "space",
-    () => {
-      togglePlay();
-    },
-    []
-  );
+  useHotkeys("space", () => {}, []);
 
-  useHotkeys(
-    "backspace",
-    () => {
-      handleRestart();
-    },
-    [playerRef]
-  );
-
-  useEffect(() => {
-    if (isDesktop) {
-      if (playVideo) {
-        togglePlay();
-      } else {
-        togglePlay();
-      }
-    }
-  }, [playVideo, isDesktop]);
-
-  const handleRestart = () => {
-    playerRef.current.currentTime = 0;
-  };
-
-  const togglePlay = () => {
-    if (isPlaying) {
-      playerRef.current?.pause();
-    } else {
-      playerRef.current?.play();
-    }
-
-    setPlaying((prev) => !prev);
-  };
+  useHotkeys("backspace", () => {}, [playerRef]);
 
   return (
     <div className="min-h-screen relative w-screen">
@@ -76,15 +40,10 @@ export function SectionDemo({ playVideo }: Props) {
             <Button
               size="icon"
               className="rounded-full w-14 h-14 bg-transparent border border-white text-white hover:bg-transparent"
-              onClick={handleRestart}
             >
               <Icons.Reply size={24} />
             </Button>
-            <Button
-              size="icon"
-              className="rounded-full w-14 h-14"
-              onClick={togglePlay}
-            >
+            <Button size="icon" className="rounded-full w-14 h-14">
               {isPlaying ? (
                 <Icons.PauseOutline size={24} />
               ) : (
@@ -93,7 +52,6 @@ export function SectionDemo({ playVideo }: Props) {
             </Button>
           </div>
           <ReactHlsPlayer
-            onClick={togglePlay}
             src="https://customer-oh6t55xltlgrfayh.cloudflarestream.com/3c8ebd39be71d2451dee78d497b89a23/manifest/video.m3u8"
             autoPlay={false}
             controls={!isDesktop}
