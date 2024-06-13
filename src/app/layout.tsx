@@ -1,13 +1,16 @@
 import type { Metadata } from "next";
+import localFont from "next/font/local";
 
 import "./globals.css";
 import { Inter as FontSans } from "next/font/google";
 import { cn } from "@/lib/utils";
 
 export const metadata: Metadata = {
-  title: "Pitch",
-  description: "My pitch",
+  title: "Cal.com Deck",
+  description: "Learn more about Cal.com",
 };
+
+const calFont = localFont({ src: "../fonts/CalSans-SemiBold.woff2" });
 
 const fontSans = FontSans({
   subsets: ["latin"],
