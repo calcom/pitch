@@ -9,7 +9,6 @@ export const metadata: Metadata = {
   title: "Cal.com Deck",
   description: "Learn more about Cal.com",
 };
-
 const calFont = localFont({ src: "../fonts/CalSans-SemiBold.woff2" });
 
 const fontSans = FontSans({

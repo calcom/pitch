@@ -1,6 +1,6 @@
-import Chart from "@/components/chart";
-import Graph from "@/components/pitch/graph";
-import { PitchCarusel } from "@/components/pitch/pitch-carousel";
+"use server";
+
+import Chart from "../chart";
 
 type RawData = Record<string, string>;
 
@@ -22,7 +22,8 @@ async function getData(url: string): Promise<Data[]> {
     };
   });
 }
-export default async function Home() {
+
+export default async function Graph() {
   // get data for monthly active users
   const urlMAU =
     "https://cal.metabaseapp.com/public/question/81ced336-2644-47f3-ae2f-6bda42f2399d.json";
@@ -34,19 +35,13 @@ export default async function Home() {
   const dataBookings = await getData(urlBookings);
 
   return (
-    <>
-      <PitchCarusel
-        mau={
-          <Chart data={dataMAU} xAxisLabel="Month" yAxisLabel="Active users" />
-        }
-        bookings={
-          <Chart
-            data={dataBookings}
-            xAxisLabel="Month"
-            yAxisLabel="Monthly bookings"
-          />
-        }
+    <main className="p-4 sm:p-10 space-y-10 max-w-7xl mx-auto">
+      <Chart data={dataMAU} xAxisLabel="Month" yAxisLabel="Active users" />
+      <Chart
+        data={dataBookings}
+        xAxisLabel="Month"
+        yAxisLabel="Monthly bookings"
       />
-    </>
+    </main>
   );
 }
