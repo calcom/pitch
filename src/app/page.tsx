@@ -1,5 +1,4 @@
 import Chart from "@/components/chart";
-import Graph from "@/components/pitch/graph";
 import { PitchCarusel } from "@/components/pitch/pitch-carousel";
 
 type RawData = Record<string, string>;
@@ -24,14 +23,17 @@ async function getData(url: string): Promise<Data[]> {
 }
 export default async function Home() {
   // get data for monthly active users
-  const urlMAU =
-    "https://cal.metabaseapp.com/public/question/81ced336-2644-47f3-ae2f-6bda42f2399d.json";
-  const dataMAU = await getData(urlMAU);
-
+  const dataMAU = await getData(
+    "https://cal.metabaseapp.com/public/question/81ced336-2644-47f3-ae2f-6bda42f2399d.json"
+  );
   // get data for monthly bookings
-  const urlBookings =
-    "https://cal.metabaseapp.com/public/question/881369ab-c02b-4d48-b1a8-043bf88c45e8.json";
-  const dataBookings = await getData(urlBookings);
+  const dataMonthlyBookings = await getData(
+    "https://cal.metabaseapp.com/public/question/881369ab-c02b-4d48-b1a8-043bf88c45e8.json"
+  );
+  // get data for monthly bookings
+  const dataMonthlyAttendees = await getData(
+    "https://cal.metabaseapp.com/public/question/ce7ef176-5072-42de-954e-5d4aaa20418e.json"
+  );
 
   return (
     <>
@@ -41,10 +43,19 @@ export default async function Home() {
         }
         bookings={
           <Chart
-            data={dataBookings}
+            data={dataMonthlyBookings}
             xAxisLabel="Month"
             yAxisLabel="Monthly bookings"
           />
+        }
+        totalUniqueGuests={
+          <>
+            <Chart
+              data={dataMonthlyAttendees}
+              xAxisLabel="Month"
+              yAxisLabel="Distinct values of Email"
+            />
+          </>
         }
       />
     </>

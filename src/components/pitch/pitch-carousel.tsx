@@ -1,6 +1,5 @@
 "use client";
 
-import { setViewCount } from "@/actions/set-view-count";
 import { SectionBook } from "@/components/pitch/section-book";
 import { SectionDemo } from "@/components/pitch/section-demo";
 import { SectionNext } from "@/components/pitch/section-next";
@@ -23,9 +22,11 @@ import { CarouselToolbar } from "./carousel-toolbar";
 export function PitchCarusel({
   mau,
   bookings,
+  totalUniqueGuests,
 }: {
   mau: JSX.Element;
   bookings: JSX.Element;
+  totalUniqueGuests: JSX.Element;
 }) {
   const [views, setViews] = useState(0);
   const called = useRef(false);
@@ -82,7 +83,11 @@ export function PitchCarusel({
             <Section2 />
           </CarouselItem>
           <CarouselItem>
-            <Section3 graph1={mau} graph2={bookings} />
+            <Section3
+              mau={mau}
+              bookings={bookings}
+              totalUniqueGuests={totalUniqueGuests}
+            />
           </CarouselItem>
           <CarouselItem>
             <SectionDemo playVideo={current === 4} />

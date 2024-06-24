@@ -118,3 +118,24 @@ export function hasOnlyOneValueForKey(
 
   return true;
 }
+
+type RawData = Record<string, string>;
+
+export type Data = Record<string, string | number>;
+
+export async function getData(url: string): Promise<Data[]> {
+  const res = await fetch(url);
+  if (!res.ok) {
+    throw new Error("Failed to fetch data");
+  }
+
+  const data: RawData[] = await res.json();
+
+  const keys = Object.keys(data[0]);
+  return data.map((item) => {
+    return {
+      [keys[0]]: item[keys[0]],
+      [keys[1]]: parseInt(item[keys[1]].replace(/,/g, ""), 10),
+    };
+  });
+}
