@@ -5,6 +5,7 @@ import {
   MdIosShare,
   MdOutlineContentCopy,
   MdOutlinePause,
+  MdLogin,
   MdOutlinePlayArrow,
   MdOutlineVisibility,
   MdReplay,
@@ -26,6 +27,7 @@ export const Icons = {
       />
     </svg>
   ),
+  LogIn: MdLogin,
   Visibility: MdOutlineVisibility,
   Share: MdIosShare,
   PauseOutline: MdOutlinePause,

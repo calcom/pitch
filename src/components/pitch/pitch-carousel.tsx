@@ -1,10 +1,13 @@
 "use client";
 
 import { SectionBook } from "@/components/pitch/section-book";
-import { SectionDemo } from "@/components/pitch/section-demo";
+import { Section4 } from "@/components/pitch/4";
 import { SectionNext } from "@/components/pitch/section-next";
 import { Section2 } from "@/components/pitch/2";
 import { Section5 } from "@/components/pitch/5";
+import { Section6 } from "@/components/pitch/6";
+import { Section7 } from "@/components/pitch/7";
+import { Section8 } from "@/components/pitch/8";
 import { Section1 } from "@/components/pitch/1";
 import { SectionSubscription } from "@/components/pitch/section-subscription";
 import { SectionTeam } from "@/components/pitch/section-team";
@@ -35,16 +38,7 @@ export function PitchCarusel({
   const [video, setVideo] = useState(1);
 
   useEffect(() => {
-    async function fetchViewsCount() {
-      try {
-        // const data = await setViewCount("pitch");
-        // setViews(data);
-        setViews(18000);
-      } catch {}
-    }
-
     if (!called.current) {
-      fetchViewsCount();
       called.current = true;
     }
   }, [called.current]);
@@ -90,10 +84,19 @@ export function PitchCarusel({
             />
           </CarouselItem>
           <CarouselItem>
-            <SectionDemo playVideo={current === 4} />
+            <Section4 playVideo={current === 4} />
           </CarouselItem>
           <CarouselItem>
             <Section5 />
+          </CarouselItem>
+          <CarouselItem>
+            <Section6 />
+          </CarouselItem>
+          <CarouselItem>
+            <Section7 />
+          </CarouselItem>
+          <CarouselItem>
+            <Section8 />
           </CarouselItem>
           <CarouselItem>
             <SectionTeam />
@@ -112,7 +115,7 @@ export function PitchCarusel({
           </CarouselItem>
         </CarouselContent>
 
-        <CarouselToolbar views={views} />
+        <CarouselToolbar />
       </Carousel>
 
       {/* {video === 1 ? (

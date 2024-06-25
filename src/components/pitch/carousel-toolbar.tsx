@@ -63,7 +63,7 @@ const popupCenter = ({ url, title, w, h }) => {
   return newWindow;
 };
 
-export function CarouselToolbar({ views }: Props) {
+export function CarouselToolbar() {
   const api = useCarousel();
 
   useHotkeys("arrowRight", () => api.scrollNext(), [api]);
@@ -84,32 +84,22 @@ export function CarouselToolbar({ views }: Props) {
     <Dialog>
       <div className="fixed flex justify-center left-0 bottom-5 w-full">
         <AnimatePresence>
-          <motion.div animate={{ y: views > 0 ? 0 : 100 }} initial={{ y: 100 }}>
+          <motion.div animate={{ y: 0 }} initial={{ y: 100 }}>
             <TooltipProvider delayDuration={20}>
               <div className="flex backdrop-filter backdrop-blur-lg bg-[#1A1A1A]/80 h-10 px-4 py-2 border border-[#2C2C2C] items-center space-x-4">
                 <Tooltip>
-                  <TooltipTrigger>
-                    <div className="text-[#878787] flex items-center space-x-2 border-r-[1px] border-border pr-4">
-                      <Icons.Visibility size={18} />
-
-                      <span className="text-sm">
-                        {Intl.NumberFormat("en", {
-                          notation: "compact",
-                          minimumFractionDigits: 0,
-                          maximumFractionDigits: 1,
-                        }).format(views ?? 0)}
-                      </span>
-                    </div>
+                  <TooltipTrigger asChild>
+                    <Link href="https://cal.com/signup">
+                      <Icons.LogIn size={18} className="text-[#878787]" />
+                    </Link>
                   </TooltipTrigger>
-
                   <TooltipContent
                     className="py-1 px-3 rounded-sm"
                     sideOffset={25}
                   >
-                    <span className="text-xs">Views</span>
+                    <span className="text-xs">Signup</span>
                   </TooltipContent>
                 </Tooltip>
-
                 <Tooltip>
                   <TooltipTrigger asChild>
                     <Link href="https://cal.com/sales">
@@ -120,7 +110,7 @@ export function CarouselToolbar({ views }: Props) {
                     className="py-1 px-3 rounded-sm"
                     sideOffset={25}
                   >
-                    <span className="text-xs">Book a meeting</span>
+                    <span className="text-xs">Talk to Sales</span>
                   </TooltipContent>
                 </Tooltip>
 
