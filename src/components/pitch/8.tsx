@@ -4,6 +4,7 @@ import { cn } from "@/lib/utils";
 import Link from "next/link";
 import { useState } from "react";
 import Balancer from "react-wrap-balancer";
+import { CalEmbed } from "@/components/cal-embed";
 
 export function Section8() {
   const [visible, setVisible] = useState(false);
@@ -28,13 +29,14 @@ export function Section8() {
               </button>
             </h2>
           )}
-          <iframe
+          <div
             className={cn(
-              visible ? "opacity-100 block" : "opacity-0 hidden",
-              "mt-14 md:mt-0 transition-opacity w-full min-h-screen"
+              visible ? "opacity-100 flex" : "opacity-0 hidden",
+              "mt-24 transition-opacity w-full h-[400px] md:h-[600px] px-4 md:px-0 text-center flex-col items-center justify-center"
             )}
-            src="https://i.cal.com/peer+bailey"
-          />
+          >
+            <CalEmbed calLink="peer+bailey" />
+          </div>
         </div>
       </div>
     </div>
