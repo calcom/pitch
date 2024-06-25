@@ -31,7 +31,6 @@ export function PitchCarusel({
   bookings: JSX.Element;
   totalUniqueGuests: JSX.Element;
 }) {
-  const [views, setViews] = useState(0);
   const called = useRef(false);
   const [api, setApi] = useState<CarouselApi>();
   const [current, setCurrent] = useState(0);
@@ -84,7 +83,7 @@ export function PitchCarusel({
             />
           </CarouselItem>
           <CarouselItem>
-            <Section4 playVideo={current === 4} />
+            <Section4 />
           </CarouselItem>
           <CarouselItem>
             <Section5 />
