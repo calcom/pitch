@@ -12,6 +12,7 @@ export function CalEmbed({ calLink }: Props) {
     (async function () {
       const cal = await getCalApi();
       cal("ui", {
+        theme: "dark",
         styles: { branding: { brandColor: "#000000" } },
         hideEventTypeDetails: false,
         layout: "month_view",

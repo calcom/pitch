@@ -32,7 +32,7 @@ export function Section8() {
           <div
             className={cn(
               visible ? "opacity-100 flex" : "opacity-0 hidden",
-              "mt-24 transition-opacity w-full h-[400px] md:h-[600px] px-4 md:px-0 text-center flex-col items-center justify-center"
+              "mt-14 transition-opacity w-full px-4 md:px-0 text-center flex-col items-center justify-center"
             )}
           >
             <CalEmbed calLink="peer+bailey" />

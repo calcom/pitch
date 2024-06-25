@@ -97,21 +97,26 @@ export function PitchCarusel({
           <CarouselItem>
             <Section8 />
           </CarouselItem>
+          {/* 
           <CarouselItem>
             <SectionTeam />
-          </CarouselItem>
+          </CarouselItem> */}
+          {/* 
           <CarouselItem>
             <SectionSubscription />
-          </CarouselItem>
+          </CarouselItem> */}
+          {/* 
           <CarouselItem>
             <SectionVision />
-          </CarouselItem>
+          </CarouselItem> */}
+          {/* 
           <CarouselItem>
             <SectionNext />
-          </CarouselItem>
+          </CarouselItem> */}
+          {/* 
           <CarouselItem>
             <SectionBook />
-          </CarouselItem>
+          </CarouselItem> */}
         </CarouselContent>
 
         <CarouselToolbar />
