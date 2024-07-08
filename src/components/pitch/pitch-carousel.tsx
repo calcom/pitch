@@ -9,7 +9,7 @@ import { Section6 } from "@/components/pitch/6";
 import { Section7 } from "@/components/pitch/7";
 import { Section8 } from "@/components/pitch/8";
 import { Section1 } from "@/components/pitch/1";
-import { SectionSubscription } from "@/components/pitch/section-subscription";
+import { Section9 } from "@/components/pitch/9";
 import { SectionTeam } from "@/components/pitch/section-team";
 import { Section3 } from "@/components/pitch/3";
 import { SectionVision } from "@/components/pitch/section-vision";
@@ -21,6 +21,7 @@ import {
 } from "@/components/ui/carousel";
 import { useEffect, useRef, useState } from "react";
 import { CarouselToolbar } from "./carousel-toolbar";
+import Script from "next/script";
 
 export function PitchCarusel({
   mau,
@@ -97,35 +98,28 @@ export function PitchCarusel({
           <CarouselItem>
             <Section8 />
           </CarouselItem>
-          {/* 
+          <CarouselItem>
+            <Section9 />
+          </CarouselItem>
           <CarouselItem>
             <SectionTeam />
-          </CarouselItem> */}
-          {/* 
-          <CarouselItem>
-            <SectionSubscription />
-          </CarouselItem> */}
-          {/* 
+          </CarouselItem>
           <CarouselItem>
             <SectionVision />
-          </CarouselItem> */}
-          {/* 
+          </CarouselItem>
           <CarouselItem>
             <SectionNext />
-          </CarouselItem> */}
-          {/* 
+          </CarouselItem>
           <CarouselItem>
             <SectionBook />
-          </CarouselItem> */}
+          </CarouselItem>
         </CarouselContent>
 
         <CarouselToolbar />
       </Carousel>
 
-      {/* {video === 1 ? (
-        <>
-          <Script id="1">
-            {`
+      <Script id="1">
+        {`
           console.log("got here");
            window.VIDEOASK_EMBED_CONFIG = {
               kind: "widget",
@@ -139,8 +133,11 @@ export function PitchCarusel({
                 videoPosition: "center center",
               },
             };`}
-          </Script>
-          <Script id="videoask" src="https://www.videoask.com/embed/embed.js" />
+      </Script>
+      <Script id="videoask" src="https://www.videoask.com/embed/embed.js" />
+
+      {/* {video === 1 ? (
+        <>
         </>
       ) : null} */}
 
